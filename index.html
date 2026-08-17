@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Качели без запчастей — ремонт и модернизация электронных качелей на Arduino</title>
+<meta name="description" content="Схемы, прошивки и гайды по замене сгоревших плат управления в детских электрокачелях на Arduino — когда оригинальных запчастей уже не найти.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔌</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Качели <span>без запчастей</span></a>
+    <nav class="site">
+      <a href="#projects">Модели</a>
+      <a href="#how">Как это работает</a>
+      <a href="#contact">Связаться</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <p class="kicker">DIY-ремонт и модернизация</p>
+    <h1>Плата управления сгорела?<br>Качелям не конец.</h1>
+    <p class="lead">
+      В детских электрокачелях и шезлонгах чаще всего выходит из строя именно плата
+      управления — а найти её отдельно почти никогда нельзя. Моторы, редукторы и датчики
+      при этом обычно живы. Мы показываем, как заменить мозг качелей на Arduino: схемы,
+      готовый код, пошаговые гайды — по конкретным моделям.
+    </p>
+    <a class="btn primary" href="#projects">Смотреть модели</a>
+    <a class="btn ghost" href="https://github.com/serega212121/nuovita-agio-ag2-arduino" target="_blank" rel="noopener">Код на GitHub</a>
+  </section>
+
+  <section id="projects">
+    <h2>Разобранные модели</h2>
+    <p class="section-sub">Каждая модель — отдельная схема, распиновка и прошивка под неё. Список будет расти.</p>
+
+    <div class="card-project">
+      <div class="thumb">
+        <img src="assets/nuovita-agio-ag2-wiring.svg" alt="Схема подключения Nuovita Agio AG2">
+      </div>
+      <div class="body">
+        <span class="badge">ГОТОВО</span>
+        <h3>Nuovita Agio AG2</h3>
+        <p>
+          Замена штатной платы на Arduino Nano: 6 режимов качания, музыка и колыбельные
+          через DFPlayer, управление двумя ИК-пультами одновременно, таймер автоотключения.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Arduino Nano</span>
+          <span class="tag">L298N</span>
+          <span class="tag">DFPlayer Mini</span>
+          <span class="tag">ИК-пульт</span>
+        </div>
+        <div style="margin-top:16px">
+          <a class="btn primary" href="nuovita-agio-ag2/">Схема и код</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>Как это работает</h2>
+    <p class="section-sub">Один и тот же подход почти для любых электронных качелей с мотором и кривошипным механизмом.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Разбираем и смотрим, что внутри</h3>
+        <p>Определяем моторы, датчики оборотов/положения, звуковой модуль — всё, что осталось рабочим после поломки платы.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Собираем схему на Arduino</h3>
+        <p>Драйвер моторов, распиновка, безопасное разделение 12В и 5В линий — со схемой, которую можно повторить.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Прошиваем и настраиваем режимы</h3>
+        <p>Готовый код с режимами качания, пультом ДУ и звуком — калибруется под конкретные моторы и остаётся открытым для доработки.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-box">
+      <h2>Есть похожая модель без запчастей?</h2>
+      <p>
+        Если у вас сломались качели другой модели и не получается найти плату — напишите,
+        что за модель и что именно не работает. Разберём и, если это в наших силах, добавим
+        схему и гайд.
+      </p>
+      <p style="margin-bottom:0">
+        Email: <a href="mailto:goshahits@gmail.com">goshahits@gmail.com</a>
+        &nbsp;·&nbsp; Telegram-бот для заявок — скоро.
+      </p>
+    </div>
+  </section>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    Качели без запчастей — DIY-модернизация электронных качелей на Arduino.
+    Код и схемы: <a href="https://github.com/serega212121" target="_blank" rel="noopener">github.com/serega212121</a>
+  </div>
+</footer>
+
+</body>
+</html>

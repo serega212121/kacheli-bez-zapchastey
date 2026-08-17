@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuovita Agio AG2 → Arduino — схема и прошивка | Качели без запчастей</title>
+<meta name="description" content="Полная схема подключения Arduino Nano, распиновка и прошивка для замены сгоревшей платы управления Nuovita Agio AG2.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔌</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../">Качели <span>без запчастей</span></a>
+    <nav class="site">
+      <a href="../#projects">Модели</a>
+      <a href="https://github.com/serega212121/nuovita-agio-ag2-arduino" target="_blank" rel="noopener">GitHub</a>
+      <a href="../#contact">Связаться</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap page-body">
+  <p class="kicker">Nuovita Agio AG2 · ретрофит на Arduino</p>
+  <h1>Полная схема подключения</h1>
+  <p class="dek">
+    Arduino Nano вместо родной платы управления: 2 мотора через L298N, датчики оборотов,
+    DFPlayer Mini с ИК-пультом. Цвет провода на схеме — это напряжение/назначение линии,
+    придерживайтесь его при сборке.
+  </p>
+
+  <div class="diagram-frame">
+    <img src="../assets/nuovita-agio-ag2-wiring.svg" alt="Схема подключения Arduino Nano к моторам, датчикам, L298N, DFPlayer Mini и ИК-приёмнику">
+  </div>
+
+  <h2>Распиновка Arduino Nano</h2>
+  <table>
+    <thead><tr><th>Пин</th><th>Тип</th><th>Подключено к</th><th>Назначение</th></tr></thead>
+    <tbody>
+      <tr><td class="pin">D2</td><td>вход, прерывание</td><td>RPM1 (датчик оборотов, мотор лево-право)</td><td>счёт оборотов</td></tr>
+      <tr><td class="pin">D3</td><td>вход, прерывание</td><td>RPM2 (датчик оборотов, мотор верх-низ)</td><td>счёт оборотов</td></tr>
+      <tr><td class="pin">A0</td><td>вход</td><td>HALL1 (оптический датчик, мотор лево-право)</td><td>диагностика</td></tr>
+      <tr><td class="pin">A1</td><td>вход</td><td>HALL2 (оптический датчик, мотор верх-низ)</td><td>диагностика</td></tr>
+      <tr><td class="pin">D4</td><td>вход</td><td>ИК-приёмник OUT</td><td>приём команд пульта</td></tr>
+      <tr><td class="pin">D5</td><td>выход, ШИМ</td><td>L298N ENA</td><td>скорость мотора лево-право</td></tr>
+      <tr><td class="pin">D6</td><td>выход, ШИМ</td><td>L298N ENB</td><td>скорость мотора верх-низ</td></tr>
+      <tr><td class="pin">D9 / D8</td><td>выход</td><td>L298N IN1 / IN2</td><td>направление, мотор лево-право</td></tr>
+      <tr><td class="pin">D12 / D13</td><td>выход</td><td>L298N IN3 / IN4</td><td>направление, мотор верх-низ</td></tr>
+      <tr><td class="pin">D11</td><td>выход</td><td>DFPlayer RX (через делитель 1к/2к)</td><td>команды плееру</td></tr>
+      <tr><td class="pin">D10</td><td>вход</td><td>DFPlayer TX</td><td>ответы от плеера</td></tr>
+      <tr><td class="pin">5V</td><td>выход</td><td>шина 5В</td><td>питание сенсоров, ИК, DFPlayer</td></tr>
+      <tr><td class="pin">VIN</td><td>вход</td><td>+12В с блока питания</td><td>питание платы</td></tr>
+      <tr><td class="pin">GND</td><td>—</td><td>общий провод</td><td>соединяет всё, включая GND блока питания</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Что понадобится</h2>
+  <table>
+    <tbody>
+      <tr><td>Arduino Nano</td><td>L298N (драйвер моторов)</td></tr>
+      <tr><td>2 мотора 12В + штатные датчики оборотов (20 отверстий)</td><td>DFPlayer Mini + microSD (FAT32) + 2 динамика</td></tr>
+      <tr><td>ИК-приёмник VS1838B + пульт</td><td>Резисторы 1 кОм и 2 кОм (делитель для DFPlayer RX)</td></tr>
+      <tr><td>Блок питания 12В, 2-3А</td><td>Мультиметр (рекомендуется)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <ul>
+      <li><b>DFPlayer RX</b> терпит только 3.3В — обязателен делитель напряжения, иначе модуль сгорит.</li>
+      <li><b>Моторы никогда</b> не подключаются к пину 5V Arduino — только через L298N от 12В.</li>
+      <li><b>GND</b> блока питания, Arduino и L298N обязательно соединить между собой.</li>
+      <li>На L298N должны быть <b>сняты перемычки ENA/ENB</b> — иначе не будет регулировки скорости через ШИМ.</li>
+    </ul>
+  </div>
+
+  <h2>Код и дальнейшие шаги</h2>
+  <p>
+    Полная прошивка (режимы качания, оба пульта ДУ, звук, таймер), пример считывания кодов
+    ИК-пульта и более подробные пояснения — в репозитории на GitHub:
+  </p>
+  <p>
+    <a class="btn primary" href="https://github.com/serega212121/nuovita-agio-ag2-arduino" target="_blank" rel="noopener">Открыть репозиторий</a>
+  </p>
+  <p style="color:var(--text-dim); font-size:14px; margin-top:24px;">
+    Подробный пошаговый гайд с калибровкой моторов, разбором частых ошибок и фото сборки —
+    отдельным PDF. Написать по контактам на <a href="../#contact">главной странице</a>.
+  </p>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    Качели без запчастей — DIY-модернизация электронных качелей на Arduino.
+  </div>
+</footer>
+
+</body>
+</html>

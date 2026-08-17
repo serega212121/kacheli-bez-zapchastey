@@ -1,0 +1,251 @@
+<svg viewBox="0 0 1580 820" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#e3e7ec" stroke-width="1"/>
+    </pattern>
+    <symbol id="gnd" viewBox="0 0 24 20">
+      <line x1="12" y1="0" x2="12" y2="8" stroke="#2b2f33" stroke-width="2"/>
+      <line x1="2" y1="8" x2="22" y2="8" stroke="#2b2f33" stroke-width="2"/>
+      <line x1="6" y1="13" x2="18" y2="13" stroke="#2b2f33" stroke-width="2"/>
+      <line x1="10" y1="18" x2="14" y2="18" stroke="#2b2f33" stroke-width="2"/>
+    </symbol>
+  </defs>
+
+  <rect x="0" y="0" width="1580" height="820" fill="#ffffff"/>
+  <rect x="0" y="0" width="1580" height="820" fill="url(#grid)"/>
+
+  <!-- 12V BUS -->
+  <g>
+    <polyline points="100,110 100,130 780,130" fill="none" stroke="#c0392b" stroke-width="3"/>
+    <polyline points="430,130 430,270" fill="none" stroke="#c0392b" stroke-width="3"/>
+    <polyline points="780,130 780,140" fill="none" stroke="#c0392b" stroke-width="3"/>
+    <circle cx="100" cy="130" r="3.5" fill="#c0392b"/>
+    <circle cx="430" cy="130" r="3.5" fill="#c0392b"/>
+    <circle cx="780" cy="130" r="3.5" fill="#c0392b"/>
+    <text x="160" y="123" font-size="12" fill="#c0392b" font-weight="700">12V ШИНА — прямо от блока питания, минуя Ардуино</text>
+  </g>
+
+  <!-- PSU -->
+  <g>
+    <rect x="50" y="40" width="210" height="70" rx="8" fill="#ffffff" stroke="#c0392b" stroke-width="2"/>
+    <text x="62" y="65" font-size="13" font-weight="700" fill="#1a222c">БЛОК ПИТАНИЯ</text>
+    <text x="62" y="86" font-size="12" fill="#57626e">12В · 2-3А (стаб.)</text>
+    <use href="#gnd" x="200" y="78" width="20" height="17"/>
+  </g>
+
+  <!-- MOTOR 1 -->
+  <g>
+    <rect x="50" y="150" width="270" height="210" rx="8" fill="#ffffff" stroke="#c3ccd6" stroke-width="1.5"/>
+    <text x="62" y="172" font-size="13" font-weight="700" fill="#1a222c">МОТОР 1 - ЛЕВО-ПРАВО (12В)</text>
+    <circle cx="130" cy="270" r="40" fill="none" stroke="#5b4636" stroke-width="2"/>
+    <text x="130" y="275" text-anchor="middle" font-size="13" font-weight="700" fill="#5b4636">M1</text>
+    <circle cx="222" cy="262" r="26" fill="none" stroke="#57626e" stroke-width="1.5"/>
+    <g stroke="#57626e" stroke-width="1.5">
+      <line x1="222" y1="242" x2="222" y2="248"/><line x1="222" y1="276" x2="222" y2="282"/>
+      <line x1="202" y1="262" x2="208" y2="262"/><line x1="236" y1="262" x2="242" y2="262"/>
+      <line x1="208" y1="248" x2="212" y2="252"/><line x1="232" y1="272" x2="236" y2="276"/>
+      <line x1="236" y1="248" x2="232" y2="252"/><line x1="212" y1="272" x2="208" y2="276"/>
+    </g>
+    <text x="222" y="304" text-anchor="middle" font-size="9" fill="#57626e">шестерня 20 отв.</text>
+
+    <rect x="248" y="172" width="68" height="26" rx="4" fill="#e4e9ee" stroke="#2563a8"/>
+    <text x="282" y="189" text-anchor="middle" font-size="11" font-weight="700" fill="#1a222c">RPM1</text>
+    <text x="282" y="212" text-anchor="middle" font-size="8" fill="#57626e">+5V</text>
+
+    <rect x="248" y="207" width="68" height="26" rx="4" fill="#e4e9ee" stroke="#2563a8"/>
+    <text x="282" y="224" text-anchor="middle" font-size="11" font-weight="700" fill="#1a222c">HALL1</text>
+    <text x="282" y="247" text-anchor="middle" font-size="8" fill="#57626e">+5V</text>
+  </g>
+
+  <!-- MOTOR 2 -->
+  <g>
+    <rect x="50" y="400" width="270" height="210" rx="8" fill="#ffffff" stroke="#c3ccd6" stroke-width="1.5"/>
+    <text x="62" y="422" font-size="13" font-weight="700" fill="#1a222c">МОТОР 2 - ВЕРХ-НИЗ (12В)</text>
+    <circle cx="130" cy="520" r="40" fill="none" stroke="#5b4636" stroke-width="2"/>
+    <text x="130" y="525" text-anchor="middle" font-size="13" font-weight="700" fill="#5b4636">M2</text>
+    <circle cx="222" cy="512" r="26" fill="none" stroke="#57626e" stroke-width="1.5"/>
+    <g stroke="#57626e" stroke-width="1.5">
+      <line x1="222" y1="492" x2="222" y2="498"/><line x1="222" y1="526" x2="222" y2="532"/>
+      <line x1="202" y1="512" x2="208" y2="512"/><line x1="236" y1="512" x2="242" y2="512"/>
+      <line x1="208" y1="498" x2="212" y2="502"/><line x1="232" y1="522" x2="236" y2="526"/>
+      <line x1="236" y1="498" x2="232" y2="502"/><line x1="212" y1="522" x2="208" y2="526"/>
+    </g>
+    <text x="222" y="554" text-anchor="middle" font-size="9" fill="#57626e">шестерня 20 отв.</text>
+
+    <rect x="248" y="428" width="68" height="26" rx="4" fill="#e4e9ee" stroke="#2563a8"/>
+    <text x="282" y="445" text-anchor="middle" font-size="11" font-weight="700" fill="#1a222c">RPM2</text>
+    <text x="282" y="468" text-anchor="middle" font-size="8" fill="#57626e">+5V</text>
+
+    <rect x="248" y="460" width="68" height="26" rx="4" fill="#e4e9ee" stroke="#2563a8"/>
+    <text x="282" y="477" text-anchor="middle" font-size="11" font-weight="700" fill="#1a222c">HALL2</text>
+    <text x="282" y="500" text-anchor="middle" font-size="8" fill="#57626e">+5V</text>
+  </g>
+
+  <!-- L298N -->
+  <g>
+    <rect x="400" y="270" width="220" height="160" rx="8" fill="#ffffff" stroke="#c3ccd6" stroke-width="1.5"/>
+    <text x="412" y="288" font-size="13" font-weight="700" fill="#1a222c">ДРАЙВЕР L298N</text>
+    <use href="#gnd" x="565" y="405" width="20" height="17"/>
+
+    <line x1="400" y1="290" x2="320" y2="290" stroke="#5b4636" stroke-width="2.5"/>
+    <circle cx="400" cy="290" r="2.5" fill="#5b4636"/>
+    <text x="335" y="284" font-size="10" fill="#1a222c">OUT1 · M1+</text>
+
+    <line x1="400" y1="330" x2="320" y2="330" stroke="#5b4636" stroke-width="2.5"/>
+    <circle cx="400" cy="330" r="2.5" fill="#5b4636"/>
+    <text x="335" y="324" font-size="10" fill="#1a222c">OUT2 · M1−</text>
+
+    <polyline points="400,370 355,370 355,430 320,430" fill="none" stroke="#5b4636" stroke-width="2.5"/>
+    <circle cx="400" cy="370" r="2.5" fill="#5b4636"/>
+    <text x="358" y="364" font-size="10" fill="#1a222c">OUT3 · M2+</text>
+
+    <polyline points="400,410 375,410 375,460 320,460" fill="none" stroke="#5b4636" stroke-width="2.5"/>
+    <circle cx="400" cy="410" r="2.5" fill="#5b4636"/>
+    <text x="378" y="404" font-size="10" fill="#1a222c">OUT4 · M2−</text>
+
+    <g stroke="#1f8a52" stroke-width="2">
+      <line x1="620" y1="270" x2="780" y2="270"/>
+      <line x1="620" y1="420" x2="780" y2="420"/>
+    </g>
+    <g stroke="#2563a8" stroke-width="2">
+      <line x1="620" y1="300" x2="780" y2="300"/>
+      <line x1="620" y1="330" x2="780" y2="330"/>
+      <line x1="620" y1="360" x2="780" y2="360"/>
+      <line x1="620" y1="390" x2="780" y2="390"/>
+    </g>
+    <g fill="#1f8a52">
+      <circle cx="620" cy="270" r="2.5"/><circle cx="620" cy="420" r="2.5"/>
+    </g>
+    <g fill="#2563a8">
+      <circle cx="620" cy="300" r="2.5"/><circle cx="620" cy="330" r="2.5"/>
+      <circle cx="620" cy="360" r="2.5"/><circle cx="620" cy="390" r="2.5"/>
+    </g>
+    <text x="626" y="264" font-size="10" fill="#1a222c">ENA</text>
+    <text x="626" y="294" font-size="10" fill="#1a222c">IN1</text>
+    <text x="626" y="324" font-size="10" fill="#1a222c">IN2</text>
+    <text x="626" y="354" font-size="10" fill="#1a222c">IN3</text>
+    <text x="626" y="384" font-size="10" fill="#1a222c">IN4</text>
+    <text x="626" y="414" font-size="10" fill="#1a222c">ENB</text>
+
+    <text x="412" y="450" font-size="9" fill="#57626e">лог. 5В — от Nano 5V или встроенный стаб. модуля</text>
+  </g>
+
+  <!-- NANO -->
+  <g>
+    <rect x="780" y="120" width="190" height="420" rx="8" fill="#ffffff" stroke="#b8452f" stroke-width="2"/>
+    <text x="875" y="145" text-anchor="middle" font-size="14" font-weight="700" fill="#1a222c">ARDUINO</text>
+    <text x="875" y="163" text-anchor="middle" font-size="14" font-weight="700" fill="#1a222c">NANO</text>
+
+    <line x1="700" y1="130" x2="780" y2="140" stroke="#c0392b" stroke-width="3"/>
+    <circle cx="780" cy="140" r="2.5" fill="#c0392b"/>
+    <text x="734" y="185" text-anchor="end" font-size="10" fill="#c0392b">VIN ← 12В</text>
+
+    <line x1="315" y1="185" x2="780" y2="185" stroke="#2563a8" stroke-width="2"/>
+    <circle cx="780" cy="185" r="2.5" fill="#2563a8"/>
+    <text x="734" y="200" text-anchor="end" font-size="10" fill="#1a222c">D2 · RPM1</text>
+
+    <line x1="315" y1="220" x2="780" y2="220" stroke="#2563a8" stroke-width="2"/>
+    <circle cx="780" cy="220" r="2.5" fill="#2563a8"/>
+    <text x="734" y="235" text-anchor="end" font-size="10" fill="#1a222c">A0 · HALL1</text>
+
+    <text x="734" y="266" text-anchor="end" font-size="10" fill="#1a222c">D5 · ENA</text>
+    <text x="734" y="296" text-anchor="end" font-size="10" fill="#1a222c">D9 · IN1</text>
+    <text x="734" y="326" text-anchor="end" font-size="10" fill="#1a222c">D8 · IN2</text>
+    <text x="734" y="356" text-anchor="end" font-size="10" fill="#1a222c">D12 · IN3</text>
+    <text x="734" y="386" text-anchor="end" font-size="10" fill="#1a222c">D13 · IN4</text>
+    <text x="734" y="416" text-anchor="end" font-size="10" fill="#1a222c">D6 · ENB</text>
+
+    <line x1="320" y1="441" x2="780" y2="441" stroke="#2563a8" stroke-width="2"/>
+    <circle cx="780" cy="441" r="2.5" fill="#2563a8"/>
+    <text x="734" y="435" text-anchor="end" font-size="10" fill="#1a222c">D3 · RPM2</text>
+
+    <line x1="320" y1="473" x2="780" y2="473" stroke="#2563a8" stroke-width="2"/>
+    <circle cx="780" cy="473" r="2.5" fill="#2563a8"/>
+    <text x="734" y="490" text-anchor="end" font-size="10" fill="#1a222c">A1 · HALL2</text>
+
+    <line x1="970" y1="300" x2="1060" y2="300" stroke="#2563a8" stroke-width="2"/>
+    <circle cx="970" cy="300" r="2.5" fill="#2563a8"/>
+    <text x="978" y="296" font-size="10" fill="#1a222c">D4 · ИК</text>
+
+    <polyline points="970,400 1015,400 1015,410 1060,410" fill="none" stroke="#7a3fa0" stroke-width="2"/>
+    <circle cx="970" cy="400" r="2.5" fill="#7a3fa0"/>
+    <text x="978" y="396" font-size="10" fill="#1a222c">D11 → RX*</text>
+
+    <polyline points="1060,440 1015,440 1015,430 970,430" fill="none" stroke="#7a3fa0" stroke-width="2"/>
+    <circle cx="970" cy="430" r="2.5" fill="#7a3fa0"/>
+    <text x="978" y="446" font-size="10" fill="#1a222c">D10 ← TX</text>
+
+    <text x="875" y="530" text-anchor="middle" font-size="9" fill="#57626e">*D11→RX через делитель 1кОм/2кОм (5В убьёт DFPlayer)</text>
+  </g>
+
+  <text x="780" y="575" font-size="11" fill="#b8720a" font-weight="700">Nano 5V OUT → RPM1 · RPM2 · HALL1 · HALL2 · ИК · DFPlayer</text>
+  <text x="780" y="593" font-size="11" fill="#2b2f33" font-weight="700">Nano GND → общий провод. Соедините его и с GND блока питания, и с GND L298N — обязательно.</text>
+
+  <!-- IR -->
+  <g>
+    <rect x="1060" y="260" width="170" height="90" rx="8" fill="#ffffff" stroke="#c3ccd6" stroke-width="1.5"/>
+    <text x="1072" y="282" font-size="12" font-weight="700" fill="#1a222c">ИК-ПРИЁМНИК</text>
+    <text x="1072" y="298" font-size="10" fill="#57626e">VS1838B · 38кГц</text>
+    <line x1="1090" y1="260" x2="1090" y2="246" stroke="#b8720a" stroke-width="2"/>
+    <circle cx="1090" cy="246" r="2.5" fill="#b8720a"/>
+    <text x="1090" y="240" text-anchor="middle" font-size="9" fill="#b8720a">+5V</text>
+    <use href="#gnd" x="1200" y="245" width="18" height="15"/>
+  </g>
+
+  <!-- DFPLAYER -->
+  <g>
+    <rect x="1060" y="390" width="190" height="110" rx="8" fill="#ffffff" stroke="#c3ccd6" stroke-width="1.5"/>
+    <text x="1072" y="412" font-size="12" font-weight="700" fill="#1a222c">DFPLAYER MINI</text>
+    <text x="1072" y="428" font-size="10" fill="#57626e">+ microSD, FAT32, 0001.mp3…</text>
+    <text x="1072" y="472" font-size="10" fill="#1a222c">RX / TX ↑</text>
+    <text x="1072" y="486" font-size="10" fill="#1a222c">SPK1 / SPK2 →</text>
+    <line x1="1080" y1="390" x2="1080" y2="376" stroke="#b8720a" stroke-width="2"/>
+    <circle cx="1080" cy="376" r="2.5" fill="#b8720a"/>
+    <text x="1080" y="370" text-anchor="middle" font-size="9" fill="#b8720a">+5V</text>
+    <use href="#gnd" x="1220" y="375" width="18" height="15"/>
+    <line x1="1250" y1="410" x2="1310" y2="410" stroke="#5b4636" stroke-width="2"/>
+    <circle cx="1250" cy="410" r="2.5" fill="#5b4636"/>
+    <text x="1256" y="405" font-size="9" fill="#1a222c">SPK1</text>
+    <line x1="1250" y1="440" x2="1310" y2="440" stroke="#5b4636" stroke-width="2"/>
+    <circle cx="1250" cy="440" r="2.5" fill="#5b4636"/>
+    <text x="1256" y="455" font-size="9" fill="#1a222c">SPK2</text>
+  </g>
+
+  <!-- SPEAKERS -->
+  <g>
+    <rect x="1310" y="390" width="170" height="110" rx="8" fill="#ffffff" stroke="#c3ccd6" stroke-width="1.5"/>
+    <text x="1322" y="412" font-size="12" font-weight="700" fill="#1a222c">ДИНАМИКИ</text>
+    <circle cx="1350" cy="450" r="18" fill="none" stroke="#5b4636" stroke-width="1.5"/>
+    <text x="1350" y="454" text-anchor="middle" font-size="10" fill="#1a222c">Д1</text>
+    <circle cx="1430" cy="450" r="18" fill="none" stroke="#5b4636" stroke-width="1.5"/>
+    <text x="1430" y="454" text-anchor="middle" font-size="10" fill="#1a222c">Д2</text>
+    <text x="1322" y="486" font-size="9" fill="#57626e">моно-выход — оба параллельно</text>
+  </g>
+
+  <!-- LEGEND -->
+  <g>
+    <line x1="50" y1="650" x2="1530" y2="650" stroke="#c3ccd6"/>
+    <text x="50" y="675" font-size="11" font-weight="700" fill="#1a222c">ЦВЕТА ПРОВОДОВ</text>
+
+    <line x1="50" y1="700" x2="90" y2="700" stroke="#c0392b" stroke-width="3"/>
+    <text x="98" y="704" font-size="11" fill="#1a222c">12В — силовая (моторы, вход)</text>
+
+    <line x1="340" y1="700" x2="380" y2="700" stroke="#b8720a" stroke-width="3"/>
+    <text x="388" y="704" font-size="11" fill="#1a222c">5В — сенсоры, ИК, DFPlayer</text>
+
+    <use href="#gnd" x="640" y="692" width="20" height="17"/>
+    <text x="668" y="704" font-size="11" fill="#1a222c">GND — общий провод (соединить всё!)</text>
+
+    <line x1="970" y1="700" x2="1010" y2="700" stroke="#2563a8" stroke-width="2"/>
+    <text x="1018" y="704" font-size="11" fill="#1a222c">цифровой сигнал / прерывание</text>
+
+    <line x1="50" y1="735" x2="90" y2="735" stroke="#1f8a52" stroke-width="2"/>
+    <text x="98" y="739" font-size="11" fill="#1a222c">ШИМ — скорость мотора</text>
+
+    <line x1="340" y1="735" x2="380" y2="735" stroke="#7a3fa0" stroke-width="2"/>
+    <text x="388" y="739" font-size="11" fill="#1a222c">UART — команды DFPlayer</text>
+
+    <line x1="640" y1="735" x2="680" y2="735" stroke="#5b4636" stroke-width="2.5"/>
+    <text x="688" y="739" font-size="11" fill="#1a222c">силовой выход L298N / звук на динамик</text>
+  </g>
+</svg>
