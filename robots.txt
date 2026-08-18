@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://serega212121.github.io/kacheli-bez-zapchastey/sitemap.xml
